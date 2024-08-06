@@ -1,0 +1,4 @@
+glcontext==2.5.0
+moderngl==5.10.0
+pygame==2.6.0
+PyGLM==2.7.1
