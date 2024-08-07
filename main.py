@@ -9,6 +9,7 @@ import pygame as pg
 from settings import *
 from shader_program import ShaderProgram
 from scene import Scene
+from player import Player
 
 
 class GraphicsEngine:
@@ -35,10 +36,12 @@ class GraphicsEngine:
     self.on_init()
 
   def on_init(self):
+    self.player = Player(self)
     self.shader_program = ShaderProgram(self)
     self.scene = Scene(self)
 
   def update(self):
+    self.player.update()
     self.shader_program.update()
     self.scene.update()
 
@@ -55,7 +58,7 @@ class GraphicsEngine:
   def handle_events(self):
     for event in pg.event.get():
       if event.type == pg.KEYDOWN:
-        if event.key == pg.K_ESCAPE or event.key == pg.K_q:
+        if event.key == pg.K_ESCAPE or event.key == pg.K_z:
           self.is_running = False
       elif event.type == pg.QUIT:
         self.is_runnning = False
