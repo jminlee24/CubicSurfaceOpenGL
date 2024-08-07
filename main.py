@@ -60,6 +60,8 @@ class GraphicsEngine:
       if event.type == pg.KEYDOWN:
         if event.key == pg.K_ESCAPE or event.key == pg.K_z:
           self.is_running = False
+      elif event.type == pg.MOUSEWHEEL:
+        self.player.zoom_in(event.y)
       elif event.type == pg.QUIT:
         self.is_runnning = False
 

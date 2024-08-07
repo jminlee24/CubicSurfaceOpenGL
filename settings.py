@@ -19,6 +19,7 @@ PLAYER_SPEED = .005
 PLAYER_ROT_SPEED = .003
 PLAYER_POS = glm.vec3(0, 0, 1)
 MOUSE_SENS = .002
+ZOOOM_SPEED = .1
 
 # colors
 BG_COLOR = glm.vec3(0, 0, .1)

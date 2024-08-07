@@ -19,13 +19,20 @@ class Player(Camera):
 
     b1, b2, b3 = pg.mouse.get_pressed(num_buttons=3)
 
-    if (not b3):
-      return
+    if (b1):
+      if mouse_dx:
+        self.move_left(mouse_dx * MOUSE_SENS)
+      if mouse_dy:
+        self.move_up(mouse_dy * MOUSE_SENS)
 
-    if mouse_dx:
-      self.rotate_yaw(mouse_dx * MOUSE_SENS)
-    if mouse_dy:
-      self.rotate_pitch(mouse_dy * MOUSE_SENS)
+    if (b3):
+      if mouse_dx:
+        self.rotate_yaw(mouse_dx * MOUSE_SENS)
+      if mouse_dy:
+        self.rotate_pitch(mouse_dy * MOUSE_SENS)
+
+  def zoom_in(self, dx):
+    self.move_forward(dx * ZOOOM_SPEED)
 
   def keyboard_control(self):
     key_state = pg.key.get_pressed()
