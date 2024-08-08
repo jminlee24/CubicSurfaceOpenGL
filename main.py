@@ -24,7 +24,8 @@ class GraphicsEngine:
     pg.display.set_mode(WIN_RES, flags=pg.OPENGL | pg.DOUBLEBUF)
     self.ctx = mgl.create_context()
 
-    self.ctx.enable(flags=mgl.DEPTH_TEST | mgl.CULL_FACE | mgl.BLEND)
+    # mgl.CULL_FACE is not enabled since I want all sides when graphing
+    self.ctx.enable(flags=mgl.DEPTH_TEST | mgl.BLEND)
     self.ctx.gc_mode = 'auto'
 
     self.clock = pg.time.Clock()
@@ -37,7 +38,7 @@ class GraphicsEngine:
 
   def on_init(self):
     self.player = Player(self)
-    self.shader_program = ShaderProgram(self)
+    self.shader_program = ShaderProgram(self, "surface")
     self.scene = Scene(self)
 
   def update(self):

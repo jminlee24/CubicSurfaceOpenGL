@@ -8,7 +8,7 @@ class QuadMesh(BaseMesh):
 
     self.app = app
     self.ctx = app.ctx
-    self.program = app.shader_program.quad
+    self.program = app.shader_program.chunk
     self.vbo_format = '3f 3f'
     self.attrs = ('in_position', 'in_color')
     self.vao = self.get_vao()
@@ -23,4 +23,5 @@ class QuadMesh(BaseMesh):
         (1, 1, 0), (0, 0, 1), (1, 0, 0)
     ]
     vertex_data = np.hstack([vertices, colors], dtype='float32')
+
     return vertex_data

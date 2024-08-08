@@ -21,18 +21,18 @@ class Player(Camera):
 
     if (b1):
       if mouse_dx:
-        self.move_left(mouse_dx * MOUSE_SENS)
+        self.move_left(mouse_dx * PLAYER_SPEED)
       if mouse_dy:
-        self.move_up(mouse_dy * MOUSE_SENS)
+        self.move_up(mouse_dy * PLAYER_SPEED)
 
     if (b3):
       if mouse_dx:
-        self.rotate_yaw(mouse_dx * MOUSE_SENS)
+        self.rotate_yaw(mouse_dx * PLAYER_ROT_SPEED)
       if mouse_dy:
-        self.rotate_pitch(mouse_dy * MOUSE_SENS)
+        self.rotate_pitch(mouse_dy * PLAYER_ROT_SPEED)
 
   def zoom_in(self, dx):
-    self.move_forward(dx * ZOOOM_SPEED)
+    self.move_forward(dx * ZOOM_SPEED)
 
   def keyboard_control(self):
     key_state = pg.key.get_pressed()
