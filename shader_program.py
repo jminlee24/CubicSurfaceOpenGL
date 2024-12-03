@@ -26,3 +26,6 @@ class ShaderProgram:
 
     program = self.ctx.program(vertex_shader=vertex_shader, fragment_shader=fragment_shader)
     return program
+
+  def update_float(name, f):
+

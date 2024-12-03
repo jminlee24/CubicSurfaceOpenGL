@@ -1,3 +1,5 @@
 /venv/
 /.vscode/
 /__pycache__/
+/meshes/__pycache__
+/objects/__pycache__

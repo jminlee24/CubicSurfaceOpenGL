@@ -25,7 +25,7 @@ class MarchingCubesMesh(BaseMesh):
     self.vao = self.get_vao()
 
   def get_vertex_data(self):
-    x_ = np.linspace(-10, 10, 1000)
+    x_ = np.linspace(-10, 10, 400)
 
     x, y, z = np.meshgrid(x_, x_, x_)
     F = f(x, y, z)
